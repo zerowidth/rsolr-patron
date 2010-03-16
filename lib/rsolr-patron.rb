@@ -46,12 +46,13 @@ module RSolr::Patron
     end
 
     def get(url)
-      response = connection.get url
+      response = connection.get url, {"Expect" => ""}
+
       [response.body, response.status, response.status_line]
     end
 
     def post(url, data, headers={})
-      response = connection.post url, data, headers
+      response = connection.post url, data, headers.merge("Expect" => "")
       [response.body, response.status, response.status_line]
     end
 
