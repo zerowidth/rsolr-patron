@@ -1,0 +1,24 @@
+= rsolr-patron
+
+rsolr-patron enhances RSolr with a Patron-based connection client
+
+=Requirements
+
+rsolr and the patron gem.
+
+NOTE: this currently requires the latest rsolr version from aniero's fork,
+found at http://github.com/aniero/rsolr
+
+=How
+
+Pass in :patron to the RSolr.connect method:
+  require 'rsolr-patron'
+  rsolr = RSolr.connect(:patron, :url => 'http://localhost:8983/solr')
+
+== Credits
+
+Based on rsolr-async, by Matt Mitchell
+
+== Copyright
+
+Copyright (c) 2010 Nathan Witmer. See LICENSE for details.
